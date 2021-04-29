@@ -1,7 +1,7 @@
 import React from 'react'
+import NavContainer from './NavContainer'
 import { SongList } from './SongList'
 import { layoutParams } from '../schemes/layoutParams.type'
-import NavContainer from './NavContainer'
 import { TemplateLayout } from './TemplateLayout'
 
 const Favorites = (props: layoutParams) => (

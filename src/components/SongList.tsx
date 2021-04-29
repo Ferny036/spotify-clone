@@ -7,8 +7,8 @@ import { songControl } from "../schemes/layoutParams.type"
 type SongListParams = {
   songs: Array<SongScheme>,
   valuesSong: songControl,
-  setCurrentSong: Function,
   favoriteSongs: Array<SongScheme>,
+  setCurrentSong: Function,
   setFavoriteSongs: Function
 }
 
@@ -16,10 +16,10 @@ const SongList = (props: SongListParams) => {
   return (
     <>
       <Grid
-        templateColumns={{ xl: "repeat(5, 1fr)", md: "repeat(4, 1fr)", sm: "repeat(3, 1fr)" }}
         gap={8}
+        paddingTop="1rem"
         autoFlow="row dense"
-        paddingTop="1rem">
+        templateColumns={{ xl: "repeat(5, 1fr)", md: "repeat(4, 1fr)", sm: "repeat(3, 1fr)" }} >
 
         {(props.songs.length > 0) ?
           props.songs.map((e: SongScheme, index: number) =>

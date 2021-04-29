@@ -1,6 +1,7 @@
 import React from 'react'
 
-export const Icon = ({ prefix, icon }: { prefix?: string, icon: string }) => {
+type IconParams = { prefix?: string, icon: string }
+export const Icon = ({ prefix, icon }: IconParams) => {
   return (
     <i className={(prefix ? (prefix + " ") : "fa ") + icon}></i>
   )

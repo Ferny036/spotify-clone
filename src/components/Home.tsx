@@ -1,15 +1,15 @@
 import React from 'react'
 import useAxios from "../hooks/useAxios"
+import NavContainer from './NavContainer';
 import useLocalStorage from '../hooks/useLocalStorage';
 import { Icon } from './Icon';
 import { Input } from '@chakra-ui/input';
 import { SongList } from "./SongList";
 import { SongScheme } from '../schemes/Song.scheme';
 import { layoutParams } from '../schemes/layoutParams.type';
+import { TemplateLayout } from './TemplateLayout';
 import { useEffect, useState } from 'react'
 import { Box, Button, InputGroup, InputRightElement } from '@chakra-ui/react';
-import NavContainer from './NavContainer';
-import { TemplateLayout } from './TemplateLayout';
 
 export const Home = (props: layoutParams) => {
 

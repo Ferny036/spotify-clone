@@ -18,12 +18,12 @@ const NavContainer = () => {
 
   return (
     <Stack
-      direction={["row"]}
+      color="green.spotify"
       spacing="2rem"
       fontSize={{ xl: "5xl", md: "5xl", sm: "5xl" }}
       marginTop="1rem"
-      marginBottom="1rem"
-      color="green.spotify">
+      direction={["row"]}
+      marginBottom="1rem" >
 
       <Link to="/" >
         <Text
@@ -40,8 +40,8 @@ const NavContainer = () => {
         </Text>
       </Link>
       <Flex
-        justifyContent="center"
-        alignItems="center">
+        alignItems="center"
+        justifyContent="center">
         <ColorModeSwitcher
           fontSize={{ xl: "4xl", md: "4xl", sm: "3xl" }}
           _hover={{ bgColor: "transparent" }}

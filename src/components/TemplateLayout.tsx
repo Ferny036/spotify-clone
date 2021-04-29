@@ -1,6 +1,6 @@
-import { Box, Text } from '@chakra-ui/layout'
 import React from 'react'
 import { Icon } from './Icon'
+import { Box, Text } from '@chakra-ui/layout'
 
 const TemplateLayout = (props: { text: string }) => {
   return (

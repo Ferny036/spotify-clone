@@ -1,32 +1,32 @@
-import { Flex } from '@chakra-ui/react'
 import React from 'react'
-import { SongScheme } from '../schemes/Song.scheme'
-import Controls from './Controls'
 import Info from './Info'
 import Volume from './Volume'
+import Controls from './Controls'
+import { Flex } from '@chakra-ui/react'
+import { SongScheme } from '../schemes/Song.scheme'
 
 type ReproductorParams = {
-  volume: number,
   song: SongScheme,
+  volume: number,
   isPlayingSong: boolean,
-  setIsPlayingSong: Function,
   setVolume: Function
+  setIsPlayingSong: Function,
 }
 
 const Reproductor = ({ song, isPlayingSong, setIsPlayingSong, volume, setVolume }: ReproductorParams) => {
   return (
     <Flex
-      boxShadow="0rem 0rem 0.5rem black"
-      position="fixed"
-      alignItems="center"
-      justifyContent="space-between"
-      bottom="0"
+      w="100%"
+      h="7rem"
       left="0"
       right="0"
-      width="100%"
+      bottom="0"
+      bgColor="dark.depth_spotify"
       padding="2rem 1rem"
-      height="7rem"
-      bgColor="dark.depth_spotify" >
+      position="fixed"
+      boxShadow="0rem 0rem 0.5rem black"
+      alignItems="center"
+      justifyContent="space-between" >
 
       <Info song={song} />
       <Controls isPlayingSong={isPlayingSong} setIsPlayingSong={setIsPlayingSong} />

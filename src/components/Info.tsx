@@ -1,17 +1,20 @@
-import { Image } from '@chakra-ui/image'
-import { Grid, GridItem, Text } from '@chakra-ui/layout'
 import React from 'react'
+import { Image } from '@chakra-ui/image'
 import { SongScheme } from '../schemes/Song.scheme'
+import { Grid, GridItem, Text } from '@chakra-ui/layout'
 
-const Info = ({ song }: { song: SongScheme }) => {
+type InfoParams = {
+  song: SongScheme
+}
+const Info = ({ song }: InfoParams) => {
   return (
     <Grid
-      templateColumns="repeat(2, auto)"
-      templateRows="repeat(2, auto)"
       w="20rem"
-      justifyContent="flex-start"
       gap={2}
-      color="white">
+      color="white"
+      templateRows="repeat(2, auto)"
+      justifyContent="flex-start"
+      templateColumns="repeat(2, auto)" >
 
       <GridItem rowSpan={2} colSpan={1} alignSelf="center" >
         <Image
@@ -22,10 +25,10 @@ const Info = ({ song }: { song: SongScheme }) => {
       </GridItem>
       <GridItem
         colSpan={1}
-        alignSelf="flex-end"
-        textOverflow="ellipsis"
         overflow="hidden"
-        whiteSpace="nowrap">
+        whiteSpace="nowrap"
+        alignSelf="flex-end"
+        textOverflow="ellipsis" >
         <Text fontSize="sm" fontWeight="bold">
           {song.title ?? "Title"}
         </Text>

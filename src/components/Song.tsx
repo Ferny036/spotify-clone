@@ -3,14 +3,14 @@ import { Icon } from "./Icon";
 import { useState } from "react";
 import { Box, Text } from "@chakra-ui/layout"
 import { SongScheme } from "../schemes/Song.scheme";
-import { Button, Flex, Image, useColorModeValue } from "@chakra-ui/react"
 import { songControl } from "../schemes/layoutParams.type";
+import { Button, Flex, Image, useColorModeValue } from "@chakra-ui/react"
 
 type SongType = {
   song: SongScheme,
   valuesSong: songControl,
-  setCurrentSong: Function,
   favoriteSongs: Array<SongScheme>,
+  setCurrentSong: Function,
   setFavoriteSongs: Function
 }
 
@@ -18,6 +18,7 @@ const Song = (props: SongType) => {
 
   const [isMouseOver, setIsMouseOver] = useState(false);
   const [isFavoriteSong, setIsFavoriteSong] = useState(props.favoriteSongs.some(item => item.id === props.song.id))
+
   const bg = useColorModeValue("white", "dark.spotify")
   const color = useColorModeValue("dark.spotify", "white")
   const shadowColor = useColorModeValue("grey", "black")
@@ -33,38 +34,38 @@ const Song = (props: SongType) => {
 
   return (
     <Flex
-      bgColor={bg}
-      justifyContent="center"
-      flexDirection="column"
-      alignItems="center"
-      wordBreak="break-word"
       w="100%"
       h="min-content"
+      bgColor={bg}
+      alignItems="center"
+      flexDirection="column"
+      justifyContent="center"
+      wordBreak="break-word"
       transition="box-shadow 250ms ease"
       _hover={{
         boxShadow: `0rem 0rem 0.75rem ${shadowColor}`
       }}>
 
       <Flex
-        position="relative"
-        justifyContent="center"
-        alignItems="center"
         w="100%"
+        position="relative"
+        alignItems="center"
+        justifyContent="center"
         onMouseEnter={() => { setIsMouseOver(true) }}
         onMouseLeave={() => { setIsMouseOver(false) }}>
 
         <Image
-          opacity={isMouseOver ? "0.25" : "1"}
           w="100%"
+          opacity={isMouseOver ? "0.25" : "1"}
           src={props.song.album.cover}
           fallbackSrc="https://via.placeholder.com/150" />
 
         {isMouseOver &&
           <Flex
             w="100%"
+            position="absolute"
             justifyContent="space-around"
             alignItems="center"
-            position="absolute"
             fontSize={{ xl: "1.5rem", md: "1rem", sm: "1rem" }}>
             <Button
               {...lateralButtonsConfig}
@@ -80,17 +81,13 @@ const Song = (props: SongType) => {
                 prefix={isFavoriteSong ? "fa" : "far"} />
             </Button>
             <Button
+              w={{ xl: "4rem", md: "4rem", sm: "3rem" }}
+              h={{ xl: "4rem", md: "4rem", sm: "3rem" }}
               color="white"
               bgColor="green.spotify"
               borderRadius="full"
-              w={{ xl: "4rem", md: "4rem", sm: "3rem" }}
-              h={{ xl: "4rem", md: "4rem", sm: "3rem" }}
-              _hover={{
-                transform: "scale(1.15)"
-              }}
-              _focus={{
-                outline: "none"
-              }}
+              _hover={{ transform: "scale(1.15)" }}
+              _focus={{ outline: "none" }}
               onClick={() => props.setCurrentSong(props.song)}>
 
               <Icon icon={isPlayingSong && currentSong.id === props.song.id ? "fa-pause" : "fa-play"} />

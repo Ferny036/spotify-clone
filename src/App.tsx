@@ -1,13 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import useLocalStorage from './hooks/useLocalStorage';
 import { Home } from "./components/Home";
 import { Favorites } from "./components/Favorites";
 import { SongScheme } from './schemes/Song.scheme';
 import { themeConfig } from "./config/theme.config";
 import { Reproductor } from './components/Reproductor';
-import { ChakraProvider, Container } from "@chakra-ui/react"
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import { songControl } from './schemes/layoutParams.type';
+import { ChakraProvider, Container } from "@chakra-ui/react"
+import { useEffect, useRef, useState } from 'react'
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 
 const theme = themeConfig();
 
